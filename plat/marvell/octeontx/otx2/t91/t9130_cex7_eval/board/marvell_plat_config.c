@@ -66,7 +66,7 @@ struct addr_map_win io_win_memory_map[] = {
 	 * later firmware stages. It should replace the MCI 0 indirect
 	 * window, which becomes no longer needed.
 	 */
-	/* {0x0000000890000000,		0x30000000,	MCI_0_TID}, */
+	/* {0x0000000a20000000,		0x60000000,	MCI_0_TID}, */
 #if (CP_COUNT > 2)
 	/* SB (MCi1) internal regs */
 	{0x00000000f6000000,		0x2000000,	MCI_1_TID},
@@ -78,7 +78,7 @@ struct addr_map_win io_win_memory_map[] = {
 	 * later firmware stages. It should replace the MCI 1 indirect
 	 * window, which becomes no longer needed.
 	 */
-	/* {0x00000008c0000000,		0x30000000,	MCI_1_TID}, */
+	/* {0x0000000a80000000,		0x60000000,	MCI_1_TID}, */
 #endif
 #endif
 #ifndef IMAGE_BLE
@@ -125,7 +125,7 @@ struct addr_map_win iob_memory_map_cp0[] = {
 	{0x00000000e0000000,	0x1000000,	PEX1_TID},
 	/* PEX0_X4 window */
 	{0x00000000c0000000,	0x20000000,	PEX0_TID},
-	{0x0000000800000000,	0x90000000,	PEX0_TID},
+	{0x0000000800000000,	0x220000000,	PEX0_TID},
 };
 
 struct addr_map_win iob_memory_map_cp1[] = {
@@ -133,26 +133,26 @@ struct addr_map_win iob_memory_map_cp1[] = {
 	{0x00000000e8000000,	0x1000000,	RUNIT_TID},
 	/* PEX2_X1 window */
 	{0x00000000e6000000,	0x2000000,	PEX2_TID},
-	{0x00000008b0000000,	0x10000000,	PEX2_TID},
+	{0x0000000a60000000,	0x20000000,	PEX2_TID},
 	/* PEX1_X1 window */
 	{0x00000000e4000000,	0x2000000,	PEX1_TID},
-	{0x00000008a0000000,	0x10000000,	PEX1_TID},
+	{0x0000000a40000000,	0x20000000,	PEX1_TID},
 	/* PEX0_X2 window */
 	{0x00000000e2000000,	0x2000000,	PEX0_TID},
-	{0x0000000890000000,	0x10000000,	PEX0_TID},
+	{0x0000000a20000000,	0x20000000,	PEX0_TID},
 };
 
 struct addr_map_win iob_memory_map_cp2[] = {
 
 	/* PEX2_X1 window */
 	{0x00000000ed000000,	0x2000000,	PEX2_TID},
-	{0x00000008e0000000,	0x10000000,	PEX2_TID},
+	{0x0000000ac0000000,	0x20000000,	PEX2_TID},
 	/* PEX1_X1 window */
 	{0x00000000eb000000,	0x2000000,	PEX1_TID},
-	{0x00000008d0000000,	0x10000000,	PEX1_TID},
+	{0x0000000aa0000000,	0x20000000,	PEX1_TID},
 	/* PEX0_X1 window */
 	{0x00000000e9000000,	0x2000000,	PEX0_TID},
-	{0x00000008c0000000,	0x10000000,	PEX0_TID},
+	{0x0000000a80000000,	0x20000000,	PEX0_TID},
 };
 
 int marvell_get_iob_memory_map(struct addr_map_win **win, uint32_t *size,
@@ -192,7 +192,7 @@ struct addr_map_win ccu_memory_map[] = {	/* IO window */
 #endif
 	{0x00000000f2000000,	0xe000000,	IO_0_TID}, /* IO window */
 	{0x00000000c0000000,	0x30000000,	IO_0_TID}, /* IO window */
-	{0x0000000800000000,	0x100000000,    IO_0_TID}, /* IO window */
+	{0x0000000800000000,	0x300000000,    IO_0_TID}, /* IO window */
 	{0x0000002000000000,	0x70e000000,	IO_0_TID}, /* IO for CV-OS */
 #endif
 };
